@@ -60,3 +60,57 @@ func TestDelete(t *testing.T) {
 	})
 	t.Log(b)
 }
+
+func TestFirst(t *testing.T) {
+	intSlice := []int{1, 2, 3, 7, 0, 4, 7}
+	b := First(intSlice)
+	t.Log(b)
+}
+
+func TestIsEmpty(t *testing.T) {
+	intSlice := []int{1, 2, 3, 7, 0, 4, 7}
+	b := IsEmpty(intSlice)
+	t.Log(b)
+}
+
+func TestPop(t *testing.T) {
+	intSlice := []int{1, 2, 3, 7, 0, 4, 7}
+	b := Pop(intSlice)
+	t.Log(b)
+}
+
+func TestPush(t *testing.T) {
+	intSlice := []int{1, 2, 3, 7, 0, 4, 7}
+	b := Push(intSlice, 100)
+	t.Log(b)
+}
+
+func TestShuffle(t *testing.T) {
+	intSlice := []int{1, 2, 3, 7, 0, 4, 7}
+	b := Shuffle(intSlice)
+	t.Log(b)
+
+	c := Shuffle(objSlice)
+	t.Log(c)
+}
+
+func TestSort(t *testing.T) {
+	intSlice := []int{1, 2, 3, 7, 0, 4, 7}
+	b := Sort(intSlice, func(i, j int) bool {
+		return i > j
+	})
+	t.Log(b)
+
+	c := Sort(objSlice, func(i, j *obj) bool {
+		return i.ID > j.ID
+	})
+	t.Log(c)
+}
+
+func TestMin(t *testing.T) {
+	intSlice := []int{1, 2, 3, 7, 0, 4, 7}
+	b := MinOrMax(intSlice, func(i, j int) bool {
+		return i > j
+	})
+	t.Log(b)
+}
